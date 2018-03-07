@@ -54,8 +54,9 @@
     h1 {
       text-align: center;
     }
-    middle-content {
+    .middle-content {
       display: block;
+      padding-top: 25px;
     }
     #inputs {
       float: left;
@@ -190,8 +191,7 @@
       location.href="newUser.html";
     }
     function confirmOrder() {
-      alert("Your Order has been placed! You will receive an email" +
-        " shortly with order details! Thank you for shopping with us!");
+      location.href="orderConfirmation.html";
     }
     function checkPassword() {
       var email = document.getElementById("email").value;
