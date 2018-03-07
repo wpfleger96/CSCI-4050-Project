@@ -1,0 +1,139 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+  #home {
+    font-size: 14px;
+    border-radius: 8px;
+    border: 2px solid #4CAF50;
+    background-color: white;
+    float: left;
+  }
+  #home:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
+  #browse {
+    font-size: 14px;
+    border-radius: 8px;
+    border: 2px solid #4CAF50;
+    background-color: white;
+    float: left;
+  }
+  #browse:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
+  #login {
+    font-size: 14px;
+    border-radius: 8px;
+    border: 2px solid #4CAF50;
+    background-color: white;
+    float: right;
+  }
+  #login:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
+  #checkout {
+    float: left;
+    font-size: 14px;
+    border-radius: 8px;
+    border: 2px solid #4CAF50;
+    background-color: white;
+  }
+  #checkout:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
+    body {
+      background-color: black;
+      color: white;
+    }
+    h1 {
+      text-align: center;
+    }
+    middle-content {
+      display: block;
+    }
+    #inputs {
+      float: left;
+      margin-left: 35%;
+      margin-right: 50%;
+    }
+    #email {
+      font-size: 20px;
+    }
+    #passwd {
+      font-size: 20px;
+    }
+    #action {
+      margin-left: 37%;
+    }
+    .search-container {
+      float: right;
+    }
+
+    input[type=text] {
+      padding: 2px;
+      font-size: 17px;
+      border: none;
+    }
+
+    .search-container button {
+      float: right;
+      padding: 4px;
+      margin-top: 0;
+      margin-right: 16px;
+      background: #ddd;
+      font-size: 17px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .search-container button:hover {
+      background: #ccc;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="top-content">
+    <input type="button" id="home" onclick="goHome()" value="Home">
+    <input type="button" id="browse" onclick="browseMovies()" value="Browse Movies">
+    <input type="button" id="login" onclick="login()" value="Login/Register">
+    <input type="button" id="checkout" onclick="checkout()" value="View Cart">
+    <div class="search-container">
+      <form action="/action_page.php">
+        <input type="text" placeholder="Search.." name="search">
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
+    </div>
+  </div>
+  <div class="middle-content">
+    <h1>User Profile</h1>
+    First name: <input type="text" value="John"><br>
+    Last name: <input type="text" value="Snow"><br>
+    Address: <input type="text" value="The North"><br>
+    Phone Number: <input type="text" value="N/A"><br>
+    Email: <input type="text" value="DragonSlayer@got.com"><br>
+      <input type="button" value="Edit Information" onclick="editInfo">
+  </div>
+	<div class="bottom-content">
+	</div>
+  <script>
+  function goHome() {
+    location.href="home.html";
+  }
+  function login() {
+    location.href="login.html";
+  }
+  function browseMovies() {
+    location.href="MovieList.html";
+  }
+  function checkout() {
+    location.href="orderSummary.html"
+  }
+  </script>
+</body>
+</html>
