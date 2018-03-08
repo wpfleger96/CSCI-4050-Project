@@ -102,7 +102,7 @@
     <input type="button" id="home" onclick="goHome()" value="Home">
     <input type="button" id="browse" onclick="browseMovies()" value="Browse Movies">
     <input type="button" id="login" onclick="login()" value="Login/Register">
-    <input type="button" id="checkout" onclick="checkout()" value="View Cart">
+    <input type="button" id="checkout" onclick="viewCart()" value="View Cart">
     <div class="search-container">
       <form action="/action_page.php">
         <input type="text" placeholder="Search.." name="search">
@@ -123,9 +123,18 @@
 <div class="bottom-content">
 </div>
   <script>
-    function goHome() {
-      location.href="home.html"
-    }
+  function goHome() {
+    location.href="home.html";
+  }
+  function login() {
+    location.href="login.html";
+  }
+  function browseMovies() {
+    location.href="MovieList.html";
+  }
+  function viewCart() {
+    location.href="orderSummary.html"
+  }
     function updateOrder() {
       var x = prompt("What would you like to do?");
     }

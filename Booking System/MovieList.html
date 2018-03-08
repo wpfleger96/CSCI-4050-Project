@@ -48,7 +48,6 @@
       height: auto;
       margin: 0;
       padding: 0;
-      width: 100%;
     }
     .grid-item {
       margin: 5%;
@@ -58,8 +57,11 @@
     body {
       background-color: black;
       color: white;
-      margin: 0;
+      margin-left: auto;
+      margin-right: auto;
       padding: 0;
+      width: 75%;
+
     }
     h1 {
       text-align: center;
@@ -74,7 +76,7 @@
     }
     #filter {
       display: inline-grid;
-      grid-template-columns: auto auto auto auto;
+      grid-template-columns: auto auto auto auto auto auto;
       grid-gap: 15px;
     }
   </style>
@@ -116,14 +118,7 @@
         <option>Time 2</option>
         <option>Time 3</option>
       </select>
-      <select multiple>
-        <option value="" disabled selected>Show Available Seats</option>
-        <option>A1</option><option>A2</option><option>A3</option>
-        <option>A4</option><option>A5</option><option>A6</option>
-      </select>
-      <input type="number" placeholder="# of Adult(s) (18+)">
-      <input type="number" placeholder="# of Children">Child
-      <input type="number" placeholder="# of Senior(s) (65+)"><br>
+      <input type="button" id="seats" onclick="selectSeats()" value="Select Seats">
       <input type="button" id="book" onclick="checkout()" value="Add to Cart">
     </div>
     <div class="grid-item" id="movie2">
@@ -140,14 +135,7 @@
         <option>Time 2</option>
         <option>Time 3</option>
       </select>
-      <select multiple>
-        <option value="" disabled selected>Show Available Seats</option>
-        <option>A1</option><option>A2</option><option>A3</option>
-        <option>A4</option><option>A5</option><option>A6</option>
-      </select>
-      <input type="number" placeholder="# of Adult(s) (18+)">
-      <input type="number" placeholder="# of Children">Child
-      <input type="number" placeholder="# of Senior(s) (65+)"><br>
+      <input type="button" id="seats" onclick="selectSeats()" value="Select Seats">
       <input type="button" id="book" onclick="checkout()" value="Add to Cart">
       <img id="viewMap" src="Seats.png" hidden>
     </div>
@@ -165,25 +153,28 @@
         <option>Time 2</option>
         <option>Time 3</option>
       </select>
-      <select multiple>
-        <option value="" disabled selected>Show Available Seats</option>
-        <option>A1</option><option>A2</option><option>A3</option>
-        <option>A4</option><option>A5</option><option>A6</option>
-      </select>
-      <input type="number" placeholder="# of Adult(s) (18+)">
-      <input type="number" placeholder="# of Children">Child
-      <input type="number" placeholder="# of Senior(s) (65+)"><br>
+      <input type="button" id="seats" onclick="selectSeats()" value="Select Seats">
       <input type="button" id="book" onclick="checkout()" value="Add to Cart">
     </div>
   </div>
-  <input type="button" id="seatMap" onclick="displayMap()" value="View Seat Map">
+
 
   <!--- Filter Section --->
   <div id="filter">
     <p style="color: white; font-size:20px; padding:0; margin:0;">Filter By: </p>
     <select style="width: 125px;">
+      <option value="" disabled selected>Title</option>
+      <option>Movie 1</option><option>Movie 2</option><option>Movie 3</option>
+    </select>
+    <select style="width: 125px;">
       <option value="" disabled selected>Genre</option>
       <option>Action</option><option>Comedy</option><option>Horror</option>
+    </select>
+    <select style="width: 125px;">
+      <option value="" disabled selected>Dates</option>
+      <option>Date 1</option>
+      <option>Date 2</option>
+      <option>Date 3</option>
     </select>
     <select style="width: 125px;">
       <option value="" disabled selected>Times</option>
@@ -211,6 +202,9 @@
         document.getElementById("viewMap").setAttribute("hidden","hidden");
         document.getElementById("seatMap").value = "View Seat Map";
       }
+    }
+    function selectSeats() {
+      var myWindow = window.open("seats.html","","width=500,height=500, top=600, left=400");
     }
   </script>
 </body>

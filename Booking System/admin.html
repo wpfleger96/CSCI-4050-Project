@@ -52,7 +52,7 @@
     }
     .bottom-content {
       background-color: white;
-      height: 50%;
+      height: 60%;
       color: black;
     }
   </style>
@@ -74,21 +74,35 @@
 
   <div class="middle-content">
     <h1>Administrator Actions</h1>
-    <input type="button" value="Manage Movie Information" onclick="manageMovie">
-    <input type="button" value="Manage Showtimes" onclick="manageShowtimes">
-    <input type="button" value="Manage Ticket Prices" onclick="manageTicketPrices">
-    <input type="button" value="Manage User Information" onclick="manageUserInfo">
-    <input type="button" value="Manage Employee Information" onclick="manageEmployeeInfo">
-    <input type="button" value="Manage Promotions" onclick="managePromotions">
+    <input type="button" value="Manage Movies" onclick="manageMovie">
+    <input type="button" value="Manage Users" onclick="manageUserInfo">
+    <input type="button" value="Manage Employees" onclick="manageEmployeeInfo">
+    <input type="button" value="Manage Ticket/Promotions" onclick="managePromotions">
     <input type="button" value="View Sales Report" onclick="viewSales">
   </div>
+
   <div class="bottom-content">
-    <p style="text-align:center;">Managing Movie Information</p>
-    <p>Movie Title: Black Panther<br>Category: Action, Adventure<br>
-    Cast: Micheal B. Jordan<br>Director: - <br>Producer: - <br>
-    Synopsis: Super Hero Movie<br>Reviews: User 1 - Great!<br>
-    Trailer Picture URL: - <br>Trailer Video URL: - <br>
-    MPAA-US Rating Code: 4.8<br>Show Dates/Time:<br> Monday - 9:00 10:00 11:30 Tuesay - ... </p>
+    <h2 style="text-align:center; margin: 0;"> Manage Movie
+      <select style="float: right; margin: 0;">
+        <option>Movie 1</option><option>Movie 2</option><option>Movie 3</option>
+      </select></h2>
+    <input type="button" value="Add Movie" onclick="manageShowtimes">
+    <input type="button" value="Edit Movie" onclick="manageShowtimes">
+    <input type="button" value="Remove Movie" onclick="manageTicketPrices"><br>
+    Movie Title: <input type="text" value="Black Panther"><br>
+    Category: <input type="text" value="Action, Adventure"><br>
+    Cast: <input type="text" value="Micheal B. Jordan"><br>
+    Director: <input type="text" value="-"><br>
+    Producer: <input type="text" value="-"><br>
+    Synopsis: <input type="text" value="Super Hero Movie"><br>
+    Reviews: <input type="text" value="User 1 - Great!"><br>
+    Trailer Picture URL: <input type="text" value="-"><br>
+    Trailer Video URL: <input type="text" value="-"><br>
+    MPAA-US Rating Code: <input type="text" value="4.8"><br>
+    Show Dates/Time:
+    <input type="text" value="Monday - 9:00 10:00 11:30 Tuesay - ... "><br>
+    <input type="submit" id="submit" onclick="" value="Submit">
+    <input type="button" id="close" onclick="" value="Cancel">
   </div>
   <script>
     function goHome() {
