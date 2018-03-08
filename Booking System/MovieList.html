@@ -3,91 +3,69 @@
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
-  .top-content {
-    height: 5%;
-    margin: 0;
-    padding: 0;
-  }
-
+    .top-content {
+      height: 5%;
+      margin: 0;
+      padding: 5px;
+    }
+    .top-content input{
+      font-size: 14px;
+      border-radius: 8px;
+      border: 2px solid #4CAF50;
+      background-color: white;
+      float: left;
+    }
+    .top-content input:hover {
+      background-color: #4CAF50; /* Green */
+      color: white;
+    }
+    .search-container {
+      float: right;
+    }
+    input[type=text] {
+      padding: 2px;
+      border-radius: 0;
+      font-size: 17px;
+      border: none;
+    }
+    .search-container button {
+      float: right;
+      padding: 4px;
+      margin-top: 0;
+      margin-right: 16px;
+      background: #ddd;
+      font-size: 17px;
+      border: none;
+      cursor: pointer;
+    }
+    .search-container button:hover {
+      background: #ccc;
+    }
     .middle-content {
       display: inline-grid;
       grid-template-columns: auto auto auto;
       background-color: white;
       height: auto;
       margin: 0;
-      ;
       padding: 0;
       width: 100%;
     }
-
-
-  #home {
-    font-size: 14px;
-    border-radius: 8px;
-    border: 2px solid #4CAF50;
-    background-color: white;
-    float: left;
-  }
-  #home:hover {
-    background-color: #4CAF50; /* Green */
-    color: white;
-  }
-  #browse {
-    font-size: 14px;
-    border-radius: 8px;
-    border: 2px solid #4CAF50;
-    background-color: white;
-    float: left;
-  }
-  #browse:hover {
-    background-color: #4CAF50; /* Green */
-    color: white;
-  }
-  #login {
-    font-size: 14px;
-    border-radius: 8px;
-    border: 2px solid #4CAF50;
-    background-color: white;
-    float: right;
-  }
-  #login:hover {
-    background-color: #4CAF50; /* Green */
-    color: white;
-  }
-  #checkout {
-    float: left;
-    font-size: 14px;
-    border-radius: 8px;
-    border: 2px solid #4CAF50;
-    background-color: white;
-  }
-  #checkout:hover {
-    background-color: #4CAF50; /* Green */
-    color: white;
-  }
-
-    body {
-      background-color: black;
-    }
-
     .grid-item {
       margin: 5%;
       width: 50%;
       height: 75%;
     }
-
-    #next {
-      float: right;
-    }
-
-    p {
+    body {
+      background-color: black;
       color: white;
-      font-size: 24px;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
       text-align: center;
       margin: 0;
       padding: 0;
     }
-
     #seatMap {
       margin-bottom: 10px;
       margin-left: auto;
@@ -99,38 +77,15 @@
       grid-template-columns: auto auto auto auto;
       grid-gap: 15px;
     }
-    .search-container {
-      float: right;
-    }
-
-    input[type=text] {
-      padding: 2px;
-      font-size: 17px;
-      border: none;
-    }
-
-    .search-container button {
-      float: right;
-      padding: 4px;
-      margin-top: 0;
-      margin-right: 16px;
-      background: #ddd;
-      font-size: 17px;
-      border: none;
-      cursor: pointer;
-    }
-
-    .search-container button:hover {
-      background: #ccc;
-    }
   </style>
 </head>
 
 <body>
+  <!--- Navigation Menu --->
   <div class="top-content">
     <input type="button" id="home" onclick="goHome()" value="Home">
     <input type="button" id="browse" onclick="browseMovies()" value="Browse Movies">
-    <input type="button" id="login" onclick="login()" value="Login/Register">
+    <input type="button" style="float: right;" id="login" onclick="login()" value="Login/Register">
     <input type="button" id="checkout" onclick="checkout()" value="View Cart">
     <div class="search-container">
       <form action="/action_page.php">
@@ -140,84 +95,95 @@
     </div>
   </div>
 
-  <p>Browse Movies</p>
-  <input type="button" id="previous" onclick="browseMovies()" value="Previous">
-  <input type="button" id="next" onclick="browseMovies()" value="Next">
+  <!--- Middle Section --->
+  <h1>Browse Movies</h1>
+  <input type="button" style="float: left;" id="previous" onclick="browseMovies()" value="Previous">
+  <input type="button" style="float: right;" id="next" onclick="browseMovies()" value="Next">
+
+  <!--- Movies Selection --->
   <div class="middle-content">
     <div class="grid-item" id="movie1">
       <img src="http://via.placeholder.com/150x150">
       <select>
-        <option value="" disabled selected>Show Times</option>
+        <option value="" disabled selected>Dates</option>
+        <option>Date 1</option>
+        <option>Date 2</option>
+        <option>Date 3</option>
+      </select>
+      <select>
+        <option value="" disabled selected>Times</option>
         <option>Time 1</option>
         <option>Time 2</option>
         <option>Time 3</option>
       </select>
-      <select>
+      <select multiple>
         <option value="" disabled selected>Show Available Seats</option>
         <option>A1</option><option>A2</option><option>A3</option>
         <option>A4</option><option>A5</option><option>A6</option>
       </select>
-      <select>
-        <option value="" disabled selected>Seat Type</option>
-        <option>Adult (18+)</option>
-        <option>Child</option>
-        <option>Senior (65+)</option>
-      </select>
+      <input type="number" placeholder="# of Adult(s) (18+)">
+      <input type="number" placeholder="# of Children">Child
+      <input type="number" placeholder="# of Senior(s) (65+)"><br>
       <input type="button" id="book" onclick="checkout()" value="Add to Cart">
     </div>
     <div class="grid-item" id="movie2">
       <img src="http://via.placeholder.com/150x150">
       <select>
-        <option value="" disabled selected>Show Times</option>
+        <option value="" disabled selected>Dates</option>
+        <option>Date 1</option>
+        <option>Date 2</option>
+        <option>Date 3</option>
+      </select>
+      <select>
+        <option value="" disabled selected>Times</option>
         <option>Time 1</option>
         <option>Time 2</option>
         <option>Time 3</option>
       </select>
-      <select>
+      <select multiple>
         <option value="" disabled selected>Show Available Seats</option>
         <option>A1</option><option>A2</option><option>A3</option>
         <option>A4</option><option>A5</option><option>A6</option>
       </select>
-      <select>
-        <option value="" disabled selected>Seat Type</option>
-        <option>Adult (18+)</option>
-        <option>Child</option>
-        <option>Senior (65+)</option>
-      </select>
+      <input type="number" placeholder="# of Adult(s) (18+)">
+      <input type="number" placeholder="# of Children">Child
+      <input type="number" placeholder="# of Senior(s) (65+)"><br>
       <input type="button" id="book" onclick="checkout()" value="Add to Cart">
       <img id="viewMap" src="Seats.png" hidden>
     </div>
     <div class="grid-item" id="movie3">
       <img src="http://via.placeholder.com/150x150">
       <select>
-        <option value="" disabled selected>Show Times</option>
+        <option value="" disabled selected>Dates</option>
+        <option>Date 1</option>
+        <option>Date 2</option>
+        <option>Date 3</option>
+      </select>
+      <select>
+        <option value="" disabled selected>Times</option>
         <option>Time 1</option>
         <option>Time 2</option>
         <option>Time 3</option>
       </select>
-      <select>
+      <select multiple>
         <option value="" disabled selected>Show Available Seats</option>
         <option>A1</option><option>A2</option><option>A3</option>
         <option>A4</option><option>A5</option><option>A6</option>
       </select>
-      <select>
-        <option value="" disabled selected>Seat Type</option>
-        <option>Adult (18+)</option>
-        <option>Child</option>
-        <option>Senior (65+)</option>
-      </select>
+      <input type="number" placeholder="# of Adult(s) (18+)">
+      <input type="number" placeholder="# of Children">Child
+      <input type="number" placeholder="# of Senior(s) (65+)"><br>
       <input type="button" id="book" onclick="checkout()" value="Add to Cart">
     </div>
   </div>
   <input type="button" id="seatMap" onclick="displayMap()" value="View Seat Map">
 
+  <!--- Filter Section --->
   <div id="filter">
     <p style="color: white; font-size:20px; padding:0; margin:0;">Filter By: </p>
     <select style="width: 125px;">
       <option value="" disabled selected>Genre</option>
-      <option>Action</option>
-      <option>Comedy</option>
-      <option>Horror</option>
+      <option>Action</option><option>Comedy</option><option>Horror</option>
     </select>
     <select style="width: 125px;">
       <option value="" disabled selected>Times</option>
@@ -227,24 +193,15 @@
     </select>
     <select style="width: 125px;">
       <option value="" disabled selected>Rating</option>
-      <option>1 Star</option>
-      <option>2 Star</option>
-      <option>3 Star</option>
+      <option>1 Star</option><option>2 Stars</option><option>3 Stars</option>
+      <option>4 Stars</option><option>5 Stars</option>
     </select>
   </div>
   <script>
-  function goHome() {
-    location.href="home.html";
-  }
-  function login() {
-    location.href="login.html";
-  }
-  function browseMovies() {
-    location.href="MovieList.html";
-  }
-  function checkout() {
-    location.href="orderSummary.html"
-  }
+    function goHome() { location.href="home.html"; }
+    function login() { location.href="login.html"; }
+    function browseMovies() { location.href="MovieList.html"; }
+    function checkout() { location.href="orderSummary.html"; }
     function displayMap() {
       var x = document.getElementById("viewMap").hasAttribute("hidden");
       if(x == true){

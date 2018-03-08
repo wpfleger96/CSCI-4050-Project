@@ -112,12 +112,22 @@
   </div>
   <div class="middle-content">
     <h1>User Profile</h1>
-    First name: <input type="text" value="John"><br>
-    Last name: <input type="text" value="Snow"><br>
+    First name*: <input type="text" value="John"><br>
+    Last name*: <input type="text" value="Snow"><br>
     Address: <input type="text" value="The North"><br>
-    Phone Number: <input type="text" value="N/A"><br>
-    Email: <input type="text" value="DragonSlayer@got.com"><br>
-      <input type="button" value="Edit Information" onclick="editInfo">
+    Phone Number*: <input type="text" value="(123)456-0789"><br>
+    Email (UserName)*: <input type="text" value="DragonSlayer@got.com"><br>
+    Card Number: <input type="text" name="ccNum" placeholder="-"><br>
+    Expiration Date: <input type="text" name="expDate" placeholder="-"><br>
+    Card Security Code: <input type="text" name="ccSC" placeholder="-"><br>
+    Password*: <input type="text" name="passwd" placeholder="Cowcow123"><br>
+    Re-enter Password*: <input type="text" placeholder="Cowcow123"><br>
+    All fields marked with (*) are manditory.<br>
+    Current promotion selected
+    <input type="radio" name="promo" id="remPasswd" checked>Yes
+    <input type="radio" name="promo" id="remPasswd">No<br>
+      <input type="button" value="Edit" onclick="editInfo">
+            <input type="button" value="Save" onclick="editInfo">
   </div>
 	<div class="bottom-content">
 	</div>

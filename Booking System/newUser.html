@@ -2,84 +2,31 @@
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
-  #home {
-    font-size: 14px;
-    border-radius: 8px;
-    border: 2px solid #4CAF50;
-    background-color: white;
-    float: left;
-  }
-  #home:hover {
-    background-color: #4CAF50; /* Green */
-    color: white;
-  }
-  #browse {
-    font-size: 14px;
-    border-radius: 8px;
-    border: 2px solid #4CAF50;
-    background-color: white;
-    float: left;
-  }
-  #browse:hover {
-    background-color: #4CAF50; /* Green */
-    color: white;
-  }
-  #login {
-    font-size: 14px;
-    border-radius: 8px;
-    border: 2px solid #4CAF50;
-    background-color: white;
-    float: right;
-  }
-  #login:hover {
-    background-color: #4CAF50; /* Green */
-    color: white;
-  }
-  #checkout {
-    float: left;
-    font-size: 14px;
-    border-radius: 8px;
-    border: 2px solid #4CAF50;
-    background-color: white;
-  }
-  #checkout:hover {
-    background-color: #4CAF50; /* Green */
-    color: white;
-  }
-    body {
-      background-color: black;
-      color: white;
+    .top-content {
+      height: 5%;
+      margin: 0;
+      padding: 5px;
     }
-    h1 {
-      text-align: center;
-    }
-    middle-content {
-      display: block;
-    }
-    #inputs {
+    .top-content input{
+      font-size: 14px;
+      border-radius: 8px;
+      border: 2px solid #4CAF50;
+      background-color: white;
       float: left;
-      margin-left: 35%;
-      margin-right: 50%;
     }
-    #email {
-      font-size: 20px;
-    }
-    #passwd {
-      font-size: 20px;
-    }
-    #action {
-      margin-left: 37%;
+    .top-content input:hover {
+      background-color: #4CAF50; /* Green */
+      color: white;
     }
     .search-container {
       float: right;
     }
-
     input[type=text] {
       padding: 2px;
+      border-radius: 0;
       font-size: 17px;
       border: none;
     }
-
     .search-container button {
       float: right;
       padding: 4px;
@@ -90,9 +37,18 @@
       border: none;
       cursor: pointer;
     }
-
     .search-container button:hover {
       background: #ccc;
+    }
+    body {
+      background-color: black;
+      color: white;
+    }
+    h1 {
+      text-align: center;
+    }
+    .middle-content {
+      display: block;
     }
   </style>
 </head>
@@ -101,7 +57,7 @@
   <div class="top-content">
     <input type="button" id="home" onclick="goHome()" value="Home">
     <input type="button" id="browse" onclick="browseMovies()" value="Browse Movies">
-    <input type="button" id="login" onclick="login()" value="Login/Register">
+    <input type="button" style="float: right;" id="login" onclick="login()" value="Login/Register">
     <input type="button" id="checkout" onclick="checkout()" value="View Cart">
     <div class="search-container">
       <form action="/action_page.php">
@@ -111,13 +67,22 @@
     </div>
   </div>
   <div class="middle-content">
-    <h1>User Login</h1>
+    <h1>User Registration</h1>
     <form on="goHome()">
-      First name: <input type="text" name="fname"><br>
-      Last name: <input type="text" name="lname"><br>
-      Address: <input type="text" name="address"><br>
-      Phone Number: <input type="text" name="phone"><br>
-      Email: <input type="text" name="email"><br>
+      First name*: <input type="text" name="fname" placeholder="John"><br>
+      Last name*: <input type="text" name="lname" placeholder="Snow"><br>
+      Address: <input type="text" name="address" placeholder="The North"><br>
+      Phone Number*: <input type="text" name="phone" placeholder="(123)456-0789"><br>
+      Email (UserName)*: <input type="text" name="email" placeholder="John@got.com"><br>
+      Card Number: <input type="text" name="ccNum" placeholder="-"><br>
+      Expiration Date: <input type="text" name="expDate" placeholder="-"><br>
+      Card Security Code: <input type="text" name="ccSC" placeholder="-"><br>
+      Password*: <input type="text" name="passwd" placeholder="Cowcow123"><br>
+      Re-enter Password*: <input type="text" placeholder="Cowcow123"><br>
+      All fields marked with (*) are manditory.<br>
+      Would you like to sign up for promotions?
+      <input type="radio" name="promo" id="remPasswd">Yes
+      <input type="radio" name="promo" id="remPasswd">No<br>
       <input type="submit" value="Submit" onclick="complete()">
     </form>
   </div>
@@ -137,7 +102,8 @@
     location.href="orderSummary.html"
   }
     function complete() {
-      alert("Your form has been submitted!");
+      alert("Your account has been submitted!");
+      alert("Your username is john@got.com. An email will be sent shortly to verify your account.");
     }
   </script>
 </body>
