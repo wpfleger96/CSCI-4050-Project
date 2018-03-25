@@ -38,9 +38,8 @@
     h1 {
       text-align: center;
     }
-    .middle-content {
+    middle-content {
       display: block;
-      padding-top: 25px;
     }
     #inputs {
       float: left;
@@ -89,68 +88,29 @@
   </nav>
 
   <div class="middle-content">
-    <h1>Checkout</h1>
-    <p>Movie: Black Panther</p>
-    <p>Date/Time: Tuesday, March 6, 2018</p>
-    <p>Seats: A1 A2 A3</p>
-    <p>Seat Type(s): 3 Adults</p>
-    <p>Total Amount: $18.00</p>
-    <form>
-      <div id="inputs">
-        <input type="promotion" id="promo" placeholder="Promotion Code">
-      </div>
-      <div id="action">
-        <input type="button" id="apply" value="Apply Promotion" onclick="applyPromotion()">
-      </div>
-    </form>
-    <section>
-<form id=payment>
-
-    <fieldset>
-        <legend>Card Details</legend>
-        <ol>
-            <li>
-            <fieldset>
-                <legend>Card Type*</legend>
-                <ol>
-                    <li>
-                        <input id=visa name=cardtype type=radio />
-                        <label for=visa>VISA</label>
-                    </li>
-                    <li>
-                        <input id=amex name=cardtype type=radio />
-                        <label for=amex>AmEx</label>
-                    </li>
-                    <li>
-                        <input id=mastercard name=cardtype type=radio />
-                        <label for=mastercard>Mastercard</label>
-                    </li>
-                </ol>
-            </fieldset>
-            </li>
-            <li>
-                <label for=cardnumber>Card Number*</label>
-                <input id=cardnumber name=cardnumber type=number required />
-            </li>
-            <li>
-                <label for=secure>Security Code*</label>
-                <input id=secure name=secure type=number required />
-            </li>
-            <li>
-                <label for=namecard>Name on Card*</label>
-                <input id=namecard name=namecard type=text placeholder="Exact name on card" required />
-            </li>
-        </ol>
-    </fieldset>
-    <fieldset>
-        <input type="submit" onclick="confirmOrder()" value="Submit Payment">
-        <input type="submit" onclick="goHome()" value="Cancel Order">
-    </fieldset>
-</form>
-</section>
+    <h1>User Profile</h1>
+    <input type="button" value="View Order History">
+    <input type="button" value="Refund Purchase">
+    <input type="button" value="Update Current Order"><br><br>
+    First name*: <input type="text" value="John"><br>
+    Last name*: <input type="text" value="Snow"><br>
+    Address: <input type="text" value="The North"><br>
+    Phone Number*: <input type="text" value="(123)456-0789"><br>
+    Email (UserName)*: <input type="text" value="DragonSlayer@got.com"><br>
+    Card Number: <input type="text" name="ccNum" placeholder="-"><br>
+    Expiration Date: <input type="text" name="expDate" placeholder="-"><br>
+    Card Security Code: <input type="text" name="ccSC" placeholder="-"><br>
+    Password*: <input type="text" name="passwd" placeholder="Cowcow123"><br>
+    Re-enter Password*: <input type="text" placeholder="Cowcow123"><br>
+    All fields marked with (*) are manditory.<br>
+    Current promotion selected
+    <input type="radio" name="promo" id="remPasswd" checked>Yes
+    <input type="radio" name="promo" id="remPasswd">No<br>
+      <input type="button" value="Edit" onclick="editInfo">
+            <input type="button" value="Save" onclick="editInfo">
   </div>
-<div class="bottom-content">
-</div>
+	<div class="bottom-content">
+	</div>
   <script></script>
 </body>
 </html>

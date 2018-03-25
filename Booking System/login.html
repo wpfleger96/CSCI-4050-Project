@@ -1,144 +1,138 @@
 <html>
 <head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- http://smallenvelop.com/display-loading-icon-page-loads-completely/ -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+
   <style>
-    .top-content {
-      height: 5%;
-      margin: 0;
-      padding: 5px;
-    }
-    .top-content input{
-      font-size: 14px;
-      border-radius: 8px;
-      border: 2px solid #4CAF50;
-      background-color: white;
-      float: left;
-    }
-    .top-content input:hover {
-      background-color: #4CAF50; /* Green */
-      color: white;
-    }
-    .search-container {
-      float: right;
-    }
-    input[type=text] {
-      padding: 2px;
-      border-radius: 0;
-      font-size: 17px;
-      border: none;
-    }
-    .search-container button {
-      float: right;
-      padding: 4px;
-      margin-top: 0;
-      margin-right: 16px;
-      background: #ddd;
-      font-size: 17px;
-      border: none;
-      cursor: pointer;
-    }
-    .search-container button:hover {
-      background: #ccc;
-    }
-    body {
-      background-color: black;
-      color: white;
-    }
-    h1 {
-      text-align: center;
-    }
-    .middle-content {
-      display: block;
-    }
-    #inputs {
-      float: left;
-      margin-left: 35%;
-      margin-right: 50%;
-    }
-    #option {
-      float: left;
+    .navbar {
+      margin-left: auto;
+      margin-right: auto;
       width: 75%;
-      margin-left: 35%;
-      margin-right: 50%;
     }
-    #email {
-      font-size: 20px;
+    #background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    	height: 100%;
+      background: url('bg.jpeg');
+      background-repeat: no-repeat;
+      background-position:center;
+      background-attachment: fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      z-index: -1;
     }
-    #passwd {
-      font-size: 20px;
+    .btn-space {
+      margin: 5px;
     }
-    #action {
-      margin-left: 37%;
+    .form-content{
+      margin-left: auto;
+      margin-right: auto;
+      width: 400px;
+    }
+    .container {
+      margin-left: auto;
+      margin-right: auto;
+      width: 400px;
+      background-color: green;
+      border-radius: 3px;
+      text-align: center;
+      padding: 1px;
     }
   </style>
 </head>
 
 <body>
-  <div class="top-content">
-    <input type="button" id="home" onclick="goHome()" value="Home">
-    <input type="button" id="browse" onclick="browseMovies()" value="Browse Movies">
-    <input type="button" style="float: right;" id="login" onclick="login()" value="Login/Register">
-    <input type="button" id="checkout" onclick="checkout()" value="View Cart">
-    <div class="search-container">
-      <form action="/action_page.php">
-        <input type="text" placeholder="Search.." name="search">
-        <button type="submit"><i class="fa fa-search"></i></button>
+  <div id="background"></div>
+
+  <!--- Navigation Menu --->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="MovieList.html">Browse Movies</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="orderSummary.html">View Cart</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="login.html">Login/Register</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search Site" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
     </div>
-  </div>
-  <div class="middle-content">
-    <h1>User Login</h1>
-    <form>
-      <div id="inputs">
-        <input type="email" id="email" placeholder="Email Address">
-        <input type="password" id="passwd" placeholder="Password">
+  </nav>
+
+  <div class="form-content">
+    <div class="container">
+      <h1>Login</h1>
+      <p>See whats going on with you account today!</p>
+    </div>
+    <form class="form-control">
+      <div class="form-group category">
+        <label for="category"><i class="fas fa-user"></i> Login as </label>
+        <select  class="form-control form-element" name='category'>
+          <option class='drop-down' value='student'> User </option>
+          <option class='drop-down' value='HOD'> Employee </option>
+          <option class='drop-down' value='administration'> Administration </option>
+        </select>
       </div>
-      <div id="option">
-        <input type="checkbox" id="remPasswd">Remember Me
-        <input type="button" id="newUser" value="Forgot My Password" onclick="forgotPassword()">
+      <div class="form-group">
+        <label for="inputEmail"><i class="fas fa-user"></i> Username</label>
+        <input type="email" class="form-control form-control-sm col-md-12" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter Username">
+        <small id="emailHelp" class="form-text text-muted text-center">We'll never share your email with anyone else.</small>
       </div>
-      <div id="action">
-        <input type="button" id="submit" value="Submit" onclick="checkPassword()">
-        <input type="button" id="newUser" value="Register New User" onclick="signUp()">
+      <div class="form-group">
+        <label for="inputPassword"><i class="fas fa-key"></i> Password</label>
+        <input type="password" class="form-control form-control-sm col-md-12" id="inputPassword" placeholder="Password">
+      </div>
+      <div class="form-check text-center">
+        <input type="checkbox" class="form-check-input" id="remPasswd">
+        <label class="form-check-label" for="remPasswd">Remember Me</label>
+        <a class="btn btn-info btn-sm" href="newUser.html">Register New User</a>
+      </div>
+      <a id="checkPasswd" class="btn btn-space btn-primary btn-success btn-block" onclick="checkPassword()"><i class="fas fa-lock"></i> Login</a>
+      <div class="modal-footer">
+        <div class="pull-left message" id="login-message"></div>
+         <p>Forgot <a id="forgot-password" style="color:blue;" onclick="forgotPassword()">Password?</a></p><br>
       </div>
     </form>
   </div>
-	<div class="bottom-content">
-	</div>
   <script>
-  function goHome() {
-    location.href="home.html";
-  }
-  function login() {
-    location.href="login.html";
-  }
-  function browseMovies() {
-    location.href="MovieList.html";
-  }
-  function checkout() {
-    location.href="orderSummary.html"
-  }
-    function signUp() {
-      location.href="newUser.html";
-    }
-    function forgotPassword() {
-      var email = prompt("Please enter your username.");
-      alert("A link to reset your password has been sent to the email connected to this account.");
-    }
-    function checkPassword() {
-      var email = document.getElementById("email").value;
-      var passwd = document.getElementById("passwd").value;
-      var confirmEmail = "ex@gmail.com";
-      var confirmPasswd = "hello";
-      var confirmAdmin = "admin";
-      if(email == confirmEmail){
-        if (passwd == confirmPasswd) {
-          location.href="userProfile.html"
-        } else if(passwd == confirmAdmin) {
-          location.href="admin.html"
-        } else { alert('Wrong Password!'); }
-      } else { alert('Wrong Email!');}
-    }
+      function forgotPassword() {
+        var email = prompt("Please enter your username.");
+        alert("A link to reset your password has been sent to the email connected to this account.");
+      }
+      function checkPassword() {
+        var email = document.getElementById("inputEmail").value;
+        var passwd = document.getElementById("inputPassword").value;
+        var confirmEmail = "ex@gmail.com";
+        var confirmPasswd = "hello";
+        var confirmAdmin = "admin";
+        if(email == confirmEmail){
+          if (passwd == confirmPasswd) {
+            location.href="userProfile.html"
+          } else if(passwd == confirmAdmin) {
+            location.href="admin.html"
+          } else { alert('Wrong Password!'); }
+        } else { alert('Wrong Email!');}
+      }
   </script>
 </body>
 </html>
