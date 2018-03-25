@@ -20,7 +20,7 @@
     left: 0;
     width: 100%;
     	height: 100%;
-      background: url('bg.jpeg');
+      background: url('img/bg.jpeg');
       background-repeat: no-repeat;
       background-position:center;
       background-attachment: fixed;
@@ -61,10 +61,10 @@
           <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="MovieList.html">Browse Movies</a>
+          <a class="nav-link" href="movie_list.html">Browse Movies</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="orderSummary.html">View Cart</a>
+          <a class="nav-link" href="order_summary.html">View Cart</a>
         </li>
       </ul>
       <ul class="navbar-nav">
@@ -105,7 +105,7 @@
       <div class="form-check text-center">
         <input type="checkbox" class="form-check-input" id="remPasswd">
         <label class="form-check-label" for="remPasswd">Remember Me</label>
-        <a class="btn btn-info btn-sm" href="newUser.html">Register New User</a>
+        <a class="btn btn-info btn-sm" href="registration.html">Register New User</a>
       </div>
       <a id="checkPasswd" class="btn btn-space btn-primary btn-success btn-block" onclick="checkPassword()"><i class="fas fa-lock"></i> Login</a>
       <div class="modal-footer">
@@ -127,9 +127,9 @@
         var confirmAdmin = "admin";
         if(email == confirmEmail){
           if (passwd == confirmPasswd) {
-            location.href="userProfile.html"
+            location.href="user_profile.html"
           } else if(passwd == confirmAdmin) {
-            location.href="admin.html"
+            location.href="admin_profile.html"
           } else { alert('Wrong Password!'); }
         } else { alert('Wrong Email!');}
       }

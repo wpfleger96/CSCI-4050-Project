@@ -16,7 +16,7 @@
     left: 0;
     width: 100%;
       height: 100%;
-      background: url('bg.jpeg');
+      background: url('img/bg.jpeg');
       background-repeat: no-repeat;
       background-position:center;
       background-attachment: fixed;
@@ -31,16 +31,10 @@
       margin-right: auto;
       width: 75%;
     }
-    body {
-      background-color: black;
-      color: white;
-    }
     h1 {
       text-align: center;
     }
-    middle-content {
-      display: block;
-    }
+
     #inputs {
       float: left;
       margin-left: 35%;
@@ -55,12 +49,21 @@
     #action {
       margin-left: 37%;
     }
+    .container {
+      margin-left: auto;
+      margin-right: auto;
+      width: 800px;
+      background-color: white;
+      border-radius: 3px;
+
+      padding: 1px;
+    }
   </style>
 </head>
 
 <body>
   <div id="background"></div>
-  
+
   <!--- Navigation Menu --->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -69,10 +72,10 @@
           <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="MovieList.html">Browse Movies</a>
+          <a class="nav-link" href="movie_list.html">Browse Movies</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="orderSummary.html">View Cart</a>
+          <a class="nav-link" href="order_summary.html">View Cart</a>
         </li>
       </ul>
       <ul class="navbar-nav">
@@ -87,11 +90,14 @@
     </div>
   </nav>
 
-  <div class="middle-content">
+  <div class="container">
+
     <h1>User Profile</h1>
+    <div class="text-center">
     <input type="button" value="View Order History">
     <input type="button" value="Refund Purchase">
     <input type="button" value="Update Current Order"><br><br>
+  </div>
     First name*: <input type="text" value="John"><br>
     Last name*: <input type="text" value="Snow"><br>
     Address: <input type="text" value="The North"><br>
@@ -108,9 +114,7 @@
     <input type="radio" name="promo" id="remPasswd">No<br>
       <input type="button" value="Edit" onclick="editInfo">
             <input type="button" value="Save" onclick="editInfo">
-  </div>
-	<div class="bottom-content">
-	</div>
+</div>
   <script></script>
 </body>
 </html>

@@ -16,7 +16,7 @@
     left: 0;
     width: 100%;
       height: 100%;
-      background: url('bg.jpeg');
+      background: url('img/bg.jpeg');
       background-repeat: no-repeat;
       background-position:center;
       background-attachment: fixed;
@@ -31,27 +31,26 @@
       margin-right: auto;
       width: 75%;
     }
-    body {
-      background-color: black;
-      color: white;
-    }
+
     h1 {
       text-align: center;
     }
-    .middle-content {
-      display: block;
-    }
-    .bottom-content {
+
+    .container {
+      margin-left: auto;
+      margin-right: auto;
+      width: 800px;
       background-color: white;
-      height: 60%;
-      color: black;
+      border: 1px solid black;
+      border-radius: 3px;
+      padding: 1px;
     }
   </style>
 </head>
 
 <body>
   <div id="background"></div>
-  
+
   <!--- Navigation Menu --->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -60,10 +59,10 @@
           <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="MovieList.html">Browse Movies</a>
+          <a class="nav-link" href="movie_list.html">Browse Movies</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="orderSummary.html">View Cart</a>
+          <a class="nav-link" href="order_summary.html">View Cart</a>
         </li>
       </ul>
       <ul class="navbar-nav">
@@ -78,7 +77,7 @@
     </div>
   </nav>
 
-  <div class="middle-content">
+  <div class="middle-content text-center">
     <h1>Administrator Actions</h1>
     <input type="button" value="Manage Movies" onclick="manageMovie">
     <input type="button" value="Manage Users" onclick="manageUserInfo">
@@ -86,7 +85,7 @@
     <input type="button" value="Manage Ticket/Promotions" onclick="managePromotions">
     <input type="button" value="View Sales Report" onclick="viewSales">
   </div>
-
+<div class="container">
   <div class="bottom-content">
     <h2 style="text-align:center; margin: 0;"> Manage Movie
       <select style="float: right; margin: 0;">
@@ -110,6 +109,7 @@
     <input type="submit" id="submit" onclick="" value="Submit">
     <input type="button" id="close" onclick="" value="Cancel">
   </div>
+</div>
   <script></script>
 </body>
 </html>

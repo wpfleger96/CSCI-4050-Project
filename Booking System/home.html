@@ -16,7 +16,7 @@
     left: 0;
     width: 100%;
       height: 100%;
-      background: url('bg.jpeg');
+      background: url('img/bg.jpeg');
       background-repeat: no-repeat;
       background-position:center;
       background-attachment: fixed;
@@ -43,6 +43,11 @@
       color: black;
       text-align: center;
     }
+    .btn-book {
+      margin-left: auto;
+      margin-right: auto;
+      width: 90%;
+    }
   </style>
 </head>
 
@@ -57,10 +62,10 @@
           <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="MovieList.html">Browse Movies</a>
+          <a class="nav-link" href="movie_list.html">Browse Movies</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="orderSummary.html">View Cart</a>
+          <a class="nav-link" href="order_summary.html">View Cart</a>
         </li>
       </ul>
       <ul class="navbar-nav">
@@ -76,10 +81,7 @@
   </nav>
 
   <h1>New Release!</h1>
-  <div class="middle-content">
-
-  </div>
-  <input type="button" value="Book Today" onclick="browseMovies()">
-  <script></script>
+  <div class="middle-content"></div>
+  <a class="btn btn-secondary btn-lg btn-block btn-book" href="movie_list.html">Book Today</a>
 </body>
 </html>

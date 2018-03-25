@@ -16,7 +16,7 @@
     left: 0;
     width: 100%;
       height: 100%;
-      background: url('bg.jpeg');
+      background: url('img/bg.jpeg');
       background-repeat: no-repeat;
       background-position:center;
       background-attachment: fixed;
@@ -31,10 +31,7 @@
       margin-right: auto;
       width: 75%;
     }
-    body {
-      background-color: black;
-      color: white;
-    }
+
     .middle-content {
       display: block;
       padding-top: 25px;
@@ -59,12 +56,22 @@
     h1 {
       text-align: center;
     }
+    .container {
+      margin-left: auto;
+      margin-right: auto;
+      width: 400px;
+      background-color: white;
+      border: 1px solid black;
+      border-radius: 3px;
+      text-align: center;
+      padding: 1px;
+    }
   </style>
 </head>
 
 <body>
   <div id="background"></div>
-  
+
   <!--- Navigation Menu --->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -73,10 +80,10 @@
           <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="MovieList.html">Browse Movies</a>
+          <a class="nav-link" href="movie_list.html">Browse Movies</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="orderSummary.html">View Cart</a>
+          <a class="nav-link" href="order_summary.html">View Cart</a>
         </li>
       </ul>
       <ul class="navbar-nav">
@@ -94,15 +101,16 @@
   <div class="middle-content">
     <h1>Order Confirmation</h1>
     <h4>Thank you for placeing your order with us.
-      Your order number is XXXXXXXXXX. You will receive an
-      email shortly with your order detail and printout tickets.</h4>
+      Your order number is XXXXXXXXXX.<br>You will receive an
+      email shortly containing your order confirmation.</h4>
+    <div class="container">
     <p> </p>
     <p>Movie: Black Panther</p>
     <p>Date/Time: Tuesday, March 6, 2018</p>
     <p>Seats: A1 A2 A3</p>
     <p>Seat Type(s): 3 Adults</p>
     <p>Total Amount: $18.00</p>
-
+    </div>
     <h4>Hope to see your there!</h4>
   </div>
 <div class="bottom-content">

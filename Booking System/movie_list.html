@@ -16,7 +16,7 @@
     left: 0;
     width: 100%;
       height: 100%;
-      background: url('bg.jpeg');
+      background: url('img/bg.jpeg');
       background-repeat: no-repeat;
       background-position:center;
       background-attachment: fixed;
@@ -38,6 +38,10 @@
       height: auto;
       margin: 0;
       padding: 0;
+
+    }
+    .container {
+      width: 75%;
     }
     .grid-item {
       margin: 5%;
@@ -46,23 +50,14 @@
     }
     body {
       background-color: black;
-      color: black;
       margin-left: auto;
       margin-right: auto;
       padding: 0;
-      width: 75%;
-
     }
     h1 {
       text-align: center;
       margin: 0;
       padding: 0;
-    }
-    #seatMap {
-      margin-bottom: 10px;
-      margin-left: auto;
-      margin-right: auto;
-      width: 100%;
     }
     #filter {
       display: inline-grid;
@@ -72,7 +67,7 @@
   </style>
 </head>
 
-<body>
+<body class="text-center">
   <div id="background"></div>
 
   <!--- Navigation Menu --->
@@ -83,10 +78,10 @@
           <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="MovieList.html">Browse Movies</a>
+          <a class="nav-link" href="movie_list.html">Browse Movies</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="orderSummary.html">View Cart</a>
+          <a class="nav-link" href="order_summary.html">View Cart</a>
         </li>
       </ul>
       <ul class="navbar-nav">
@@ -101,6 +96,7 @@
     </div>
   </nav>
 
+  <div class="container">
   <!--- Middle Section --->
   <h1>Browse Movies</h1>
   <input type="button" style="float: left;" id="previous" onclick="browseMovies()" value="Previous">
@@ -161,11 +157,11 @@
       <input type="button" id="book" onclick="checkout()" value="Add to Cart">
     </div>
   </div>
-
+</div>
 
   <!--- Filter Section --->
   <div id="filter">
-    <p style="color: white; font-size:20px; padding:0; margin:0;">Filter By: </p>
+    <p style="font-size:20px; padding:0; margin:0;">Filter By: </p>
     <select style="width: 125px;">
       <option value="" disabled selected>Title</option>
       <option>Movie 1</option><option>Movie 2</option><option>Movie 3</option>
@@ -193,18 +189,8 @@
     </select>
   </div>
   <script>
-    function displayMap() {
-      var x = document.getElementById("viewMap").hasAttribute("hidden");
-      if(x == true){
-        document.getElementById("viewMap").removeAttribute("hidden");
-        document.getElementById("seatMap").value = "Hide Seat Map";
-      } else {
-        document.getElementById("viewMap").setAttribute("hidden","hidden");
-        document.getElementById("seatMap").value = "View Seat Map";
-      }
-    }
     function selectSeats() {
-      var myWindow = window.open("seats.html","","width=500,height=500, top=600, left=400");
+      var myWindow = window.open("seat_selection.html","","width=500,height=500, top=600, left=400");
     }
   </script>
 </body>
