@@ -1,0 +1,163 @@
+<html>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- http://smallenvelop.com/display-loading-icon-page-loads-completely/ -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    #background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+      height: 100%;
+      background: url('img/bg.jpeg');
+      background-repeat: no-repeat;
+      background-position:center;
+      background-attachment: fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      z-index: -1;
+    }
+    .navbar {
+      margin-left: auto;
+      margin-right: auto;
+      width: 75%;
+    }
+    .form-content{
+      margin-left: auto;
+      margin-right: auto;
+      width: 600px;
+    }
+    .container {
+      margin-left: auto;
+      margin-right: auto;
+      width: 600px;
+      background-color: blue;
+      color: white;
+      border-radius: 3px;
+      text-align: center;
+      padding: 1px;
+    }
+    .form-element {
+      width: 225px;
+      margin: 0;
+    }
+    label {
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body onsubmit="goHome()">
+  <div id="background"></div>
+
+  <!--- Navigation Menu --->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="movie_list.html">Browse Movies</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="order_summary.html">View Cart</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="login.html">Login/Register</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search Site" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <!--- Registration Form --->
+  <div class="form-content">
+    <div class="container">
+      <h1>User Registration</h1>
+      <p>Be a part of our Community today!</p>
+    </div>
+    <form class="form-control">
+      <div class="row">
+        <label for="fname" class="col-sm-4">First Name*: </label>
+        <div class="form-group">
+          <input type="textbox" class="form-control form-element" name="fname" placeholder="First Name">
+        </div>
+      </div>
+      <div class="row">
+        <label for="lname" class="col-sm-4">Last Name*: </label>
+        <div class="form-group">
+          <input type="textbox" class="form-control form-element" name="lname" placeholder="Last Name">
+        </div>
+      </div>
+      <div class="row">
+        <label for="address" class="col-sm-4">Address: </label>
+        <div class="form-group">
+          <input type="textbox" class="form-control form-element" name="address" placeholder="Address">
+        </div>
+      </div>
+      <div class="row">
+        <label for="fname" class="col-sm-4">Phone Number*: </label>
+        <div class="form-group">
+          <input type="textbox" class="form-control form-element" name="fname" placeholder="Phone Number">
+        </div>
+      </div>
+      <div class="form-group is-hidden email">
+        <label for="Email"> <span class="glyphicon glyphicon-user"> </span> Email (Username)*: </label>
+        <input type="textbox" class="form-control form-element" name="email" placeholder="Email">
+      </div>
+      <div class="row">
+        <label for="fname" class="col-sm-4">Card Number: </label>
+        <div class="form-group">
+          <input type="textbox" class="form-control form-element" name="fname" placeholder="Card Number">
+        </div>
+      </div>
+      <div class="row">
+        <label for="fname" class="col-sm-4">Exp Date: </label>
+        <div class="form-group">
+          <input type="textbox" class="form-control form-element" name="fname" placeholder="Exp. Date">
+        </div>
+        <label for="fname" class="col-sm-4">CVC: </label>
+        <div class="form-group">
+          <input type="textbox" class="form-control form-element" name="fname" placeholder="CVC">
+        </div>
+      </div>
+      <div class="form-group password">
+        <label for="password"><span class="glyphicon glyphicon-eye-open"></span> Password*: </label>
+        <input  type="password" class="form-control password-validation form-element" name="password" placeholder="Password" data-validation="false">
+      </div>
+      <div class="form-group confirm-password">
+        <label for="confirm-password"><span class="glyphicon glyphicon-eye-open"></span> Confirm Password*: </label>
+        <input  type="password" class="form-control password-confirmation form-element" name="password1" placeholder="Confirm Password" data-validation="false">
+      </div>
+      All fields marked with (*) are manditory.<br>
+      Would you like to sign up for promotions?
+      <input type="radio" name="promo" id="remPasswd">Yes
+      <input type="radio" name="promo" id="remPasswd">No<br>
+      <input type="submit" value="Submit" onclick="complete()">
+      <br>
+      <button type="button" class="btn btn-default btn-info btn-block submit-btn signup-btn"><span class="glyphicon glyphicon-pencil"></span>&nbsp; Signup </button>
+    </form>
+  </div>
+  <script>
+    function complete() {
+      alert("Your account has been submitted!");
+      alert("Your username is john@got.com. An email will be sent shortly to verify your account.");
+    }
+  </script>
+</body>
+</html>
