@@ -97,7 +97,7 @@
       var x = prompt("What would you like to do?");
     }
     function checkout() {
-      location.href="checkout.html"
+      location.href="checkout.jsp"
     }
   </script>
 </body>
